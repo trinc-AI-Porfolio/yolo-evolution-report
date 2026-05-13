@@ -1,0 +1,108 @@
+\chapter{THẾ HỆ ĐẦU: YOLOv1 -- YOLOv4 (2015--2020)}
+
+%% ========== YOLOv1 ==========
+\section{YOLOv1 (2015) --- Khởi nguồn}
+\textbf{Paper:} ``You Only Look Once: Unified, Real-Time Object Detection'' (CVPR 2016) \cite{yolov1}\\
+\textbf{Tác giả:} Joseph Redmon, Santosh Divvala, Ross Girshick, Ali Farhadi
+
+[* YÊU CẦU CHÈN ẢNH: Tác giả hãy chèn sơ đồ kiến trúc YOLOv1 từ paper gốc (Figure 3, Redmon et al. 2016).]
+
+\subsection{Ý tưởng cốt lõi}
+Coi object detection là \textbf{bài toán hồi quy duy nhất}: từ pixel ảnh $\rightarrow$ bounding boxes + class probabilities, chỉ qua \textbf{một lần forward pass}. Chia ảnh thành lưới $S \times S$ ($S=7$), mỗi ô dự đoán $B=2$ boxes và $C=20$ classes \cite{yolov1}.
+
+\subsection{Kiến trúc}
+24 lớp convolutional + 2 lớp fully connected. Cảm hứng từ GoogLeNet. Output: tensor $7 \times 7 \times 30$. Fast YOLO: 9 conv layers.
+
+\subsection{Hàm Loss (5 thành phần)}
+\begin{equation}
+\mathcal{L} = \lambda_{coord}\sum_{i}\sum_{j}\mathbb{1}_{ij}^{obj}\left[(x_i-\hat{x}_i)^2+(y_i-\hat{y}_i)^2+(\sqrt{w_i}-\sqrt{\hat{w}_i})^2+(\sqrt{h_i}-\sqrt{\hat{h}_i})^2\right]
+\end{equation}
+\begin{equation}
++ \sum_{i}\sum_{j}\mathbb{1}_{ij}^{obj}(C_i-\hat{C}_i)^2 + \lambda_{noobj}\sum_{i}\sum_{j}\mathbb{1}_{ij}^{noobj}(C_i-\hat{C}_i)^2 + \sum_{i}\mathbb{1}_{i}^{obj}\sum_{c}(p_i(c)-\hat{p}_i(c))^2
+\end{equation}
+Với $\lambda_{coord}=5$, $\lambda_{noobj}=0.5$. Dùng $\sqrt{w}, \sqrt{h}$ để giảm ảnh hưởng sai số ở box lớn \cite{yolov1}.
+
+\subsection{Kết quả và đánh giá}
+\begin{table}[H]\centering
+\caption{YOLOv1 trên PASCAL VOC 2007}
+\begin{tabular}{lcc}\toprule
+\textbf{Model} & \textbf{mAP} & \textbf{FPS} \\\midrule
+Fast YOLO & 52.7\% & 155 \\
+YOLO & 63.4\% & 45 \\
+YOLO VGG-16 & 66.4\% & 21 \\
+Fast R-CNN & 70.0\% & 0.5 \\\bottomrule
+\end{tabular}
+\end{table}
+
+\textit{Ghi chú: FPS đo trên Titan X (Maxwell). Không so sánh trực tiếp với FPS đo trên các thế hệ GPU sau (V100, T4...).}
+
+\textbf{Ưu điểm:} Real-time đầu tiên; ít false positive background; tổng quát hóa tốt (Picasso: 53.3\% vs R-CNN 10.2\%) \cite{yolov1}.\\
+\textbf{Nhược điểm:} Vật nhỏ kém (grid thô $7 \times 7$); localization sai nhiều; mỗi ô chỉ 1 class.
+
+%% ========== YOLOv2 ==========
+\section{YOLOv2 / YOLO9000 (2016) --- Better, Faster, Stronger}
+\textbf{Paper:} ``YOLO9000: Better, Faster, Stronger'' (CVPR 2017) \cite{yolov2}\\
+\textbf{Tác giả:} Joseph Redmon, Ali Farhadi
+
+\subsection{Các cải tiến chính}
+\begin{table}[H]\centering
+\caption{Cải tiến tích lũy YOLOv2}
+\begin{tabular}{clcc}\toprule
+\# & \textbf{Kỹ thuật} & \textbf{mAP (\%)} & \textbf{Thay đổi}\\\midrule
+0 & Baseline (v1) & 63.4 & -- \\
+1 & + Batch Normalization & 65.4 & +2.0 \\
+2 & + High-Res Classifier (448) & 69.4 & +4.0 \\
+3 & + Anchor Boxes (5 anchors) & 69.2 & Recall +7\% \\
+4 & + Dimension Clusters (k-means) & -- & IoU tốt hơn \\
+5 & + Direct Location (sigmoid) & 74.4 & +5.0 \\
+6 & + Passthrough ($26 \times 26 \rightarrow 13 \times 13$) & 75.4 & +1.0 \\
+7 & + Multi-Scale Training & 76.8 & +1.4 \\
+\midrule
+& \textbf{YOLOv2 (416)} & \textbf{76.8} & \textbf{+13.4} \\\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Darknet-19 \& YOLO9000}
+Backbone mới: 19 conv + 5 maxpool, 5.58B FLOPs (VGG: 30.69B). YOLO9000 dùng \textbf{WordTree} joint training trên COCO + ImageNet $\rightarrow$ detect 9000+ categories \cite{yolov2}.
+
+%% ========== YOLOv3 ==========
+\section{YOLOv3 (2018) --- Multi-Scale Detection}
+\textbf{Paper:} ``YOLOv3: An Incremental Improvement'' (Tech Report) \cite{yolov3}\\
+\textbf{Tác giả:} Joseph Redmon, Ali Farhadi \textit{(paper cuối cùng của Redmon trước khi dừng nghiên cứu CV vì lo ngại đạo đức)}
+
+\subsection{Đột phá: 3 scales}
+Dự đoán ở 3 scales ($13 \times 13$, $26 \times 26$, $52 \times 52$) theo FPN-style, 3 anchors/scale = 9 anchors tổng. Thay Softmax bằng \textbf{Sigmoid} (multi-label classification) \cite{yolov3}.
+
+\subsection{Darknet-53}
+53 conv layers + residual connections. Chính xác bằng ResNet-152 nhưng \textbf{nhanh gấp 2$\times$} (78 vs 37 FPS) \cite{yolov3}.
+
+\subsection{Kết quả}
+mAP50: 57.9\% (COCO), ngang RetinaNet nhưng nhanh gấp 3.8$\times$. mAP50-95: 33.0\% --- cho thấy localization vẫn yếu ở IoU cao.
+
+%% ========== YOLOv4 ==========
+\section{YOLOv4 (2020) --- Tập đại thành}
+\textbf{Paper:} ``YOLOv4: Optimal Speed and Accuracy of Object Detection'' \cite{yolov4}\\
+\textbf{Tác giả:} Alexey Bochkovskiy, Chien-Yao Wang, Hong-Yuan Mark Liao
+
+[* YÊU CẦU CHÈN ẢNH: Tác giả hãy chèn sơ đồ kiến trúc YOLOv4 (CSPDarknet53 + SPP + PAN) từ paper gốc.]
+
+\subsection{Phương pháp luận: BoF \& BoS}
+\begin{itemize}
+    \item \textbf{Bag of Freebies (BoF):} Chỉ tăng training cost --- Mosaic, CutMix, CIoU Loss, Label Smoothing, SAT, DropBlock, Cosine Annealing
+    \item \textbf{Bag of Specials (BoS):} Tăng nhẹ inference --- Mish activation, SPP, SAM, PAN, DIoU-NMS
+\end{itemize}
+
+\subsection{Kiến trúc: CSPDarknet53 + SPP + PAN}
+CSP (Cross Stage Partial) chia features thành 2 phần, giảm 20\% computation. SPP tăng receptive field. PAN cải thiện localization signals \cite{yolov4}.
+
+\subsection{Kỹ thuật mới}
+\begin{itemize}
+    \item \textbf{Mosaic Augmentation:} Ghép 4 ảnh $\rightarrow$ model thấy nhiều context, giảm batch size cần thiết
+    \item \textbf{SAT (Self-Adversarial Training):} Tự tạo adversarial perturbation $\rightarrow$ train robust hơn
+    \item \textbf{CIoU Loss:} $\mathcal{L}_{CIoU} = 1 - IoU + \frac{\rho^2(b, b^{gt})}{c^2} + \alpha v$ --- xét overlap + khoảng cách tâm + aspect ratio \cite{yolov4}
+\end{itemize}
+
+\subsection{Kết quả}
+43.5\% mAP (COCO), $\sim$65 FPS (V100) \cite{yolov4}. Nhảy vọt \textbf{+10.5\%} so với v3 --- bước nhảy lớn nhất lịch sử YOLO. Train được trên single GPU.
+
+\textit{Ghi chú: FPS đo trên V100 GPU. Không so sánh trực tiếp với FPS đo trên Titan X (v1--v3) do sự khác biệt thế hệ phần cứng.}

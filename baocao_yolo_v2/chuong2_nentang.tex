@@ -1,0 +1,73 @@
+\chapter{NỀN TẢNG LÝ THUYẾT}
+
+\section{Pipeline Object Detection hiện đại}
+
+Một detector hiện đại gồm 3 phần:
+\begin{itemize}
+    \item \textbf{Backbone:} Mạng trích xuất features từ ảnh (VGG, ResNet, Darknet, CSPDarknet, EfficientNet...)
+    \item \textbf{Neck:} Kết hợp features ở nhiều scales (FPN, PAN, BiFPN)
+    \item \textbf{Head:} Dự đoán bounding boxes và classes
+\end{itemize}
+
+\section{One-stage vs Two-stage Detectors}
+
+\begin{table}[H]
+\centering
+\caption{So sánh One-stage và Two-stage}
+\begin{tabular}{lll}
+\toprule
+\textbf{Tiêu chí} & \textbf{Two-stage} & \textbf{One-stage} \\
+\midrule
+Đại diện & Faster R-CNN & YOLO, SSD \\
+Tốc độ & Chậm (5--20 FPS) & Nhanh (30--300 FPS) \\
+Accuracy & Cao hơn (trước 2020) & Bắt kịp từ YOLOv4+ \\
+Pipeline & 2 giai đoạn & End-to-end \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Các khái niệm cốt lõi}
+
+\subsection{IoU (Intersection over Union)}
+Đo mức trùng lặp giữa predicted box và ground truth:
+\[
+\text{IoU} = \frac{|B_p \cap B_{gt}|}{|B_p \cup B_{gt}|}
+\]
+
+\subsection{mAP (mean Average Precision)}
+\begin{itemize}
+    \item \textbf{mAP@50:} Tính AP ở ngưỡng IoU = 0.5
+    \item \textbf{mAP@50:95:} Trung bình AP ở IoU từ 0.5 đến 0.95 (bước 0.05) — metric chính trên COCO
+\end{itemize}
+
+\subsection{Anchor Boxes}
+Các hộp mẫu (templates) được định nghĩa trước với kích thước và tỷ lệ khác nhau. Model dự đoán \textbf{offsets} so với anchors thay vì tọa độ tuyệt đối.
+
+\subsection{NMS (Non-Maximum Suppression)}
+Thuật toán loại bỏ bounding boxes trùng lặp: giữ box có confidence cao nhất, loại bỏ các boxes có IoU > ngưỡng với box đã chọn.
+
+\subsection{Các loại Loss Function trong YOLO}
+
+\begin{table}[H]
+\centering
+\caption{Tiến hóa Loss Function}
+\begin{tabular}{lll}
+\toprule
+\textbf{Loss} & \textbf{Version} & \textbf{Đặc điểm} \\
+\midrule
+MSE/SSE & v1--v3 & Đơn giản, coi box lớn/nhỏ ngang nhau \\
+IoU Loss & -- & Trực tiếp tối ưu IoU \\
+GIoU & v6 & Xét cả vùng bao ngoài \\
+CIoU & v4--v8 & + khoảng cách tâm + aspect ratio \\
+DFL & v8--v12 & Dự đoán phân phối thay vì giá trị đơn \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Datasets chuẩn}
+
+\begin{itemize}
+    \item \textbf{PASCAL VOC} (2007/2012): 20 classes, ~10K ảnh. Metric: mAP@50.
+    \item \textbf{MS COCO:} 80 classes, 330K ảnh. Metric: mAP@50:95. Benchmark chính từ v3.
+    \item \textbf{LVIS:} 1203 categories. Dùng cho open-vocabulary (YOLOE).
+\end{itemize}

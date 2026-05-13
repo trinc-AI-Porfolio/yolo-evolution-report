@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+body { background: white; display: flex; justify-content: center; padding: 20px; font-family: 'Segoe UI', sans-serif; }
+</style>
+</head>
+<body>
+<pre class="mermaid">
+flowchart TD
+    subgraph Redmon["<b>🔵 Dòng Redmon (2015–2018)</b>"]
+        direction TB
+        V1["<b>YOLOv1</b><br/>2015 · 63.4% VOC"]
+        V2["<b>YOLOv2</b><br/>2016 · 78.6% VOC"]
+        V3["<b>YOLOv3</b><br/>2018 · 33.0% COCO"]
+        V1 --> V2 --> V3
+    end
+
+    subgraph Wang["<b>🟢 Dòng Wang (2020–2024)</b>"]
+        direction TB
+        V4["<b>YOLOv4</b><br/>2020 · 43.5%"]
+        V7["<b>YOLOv7</b><br/>2022 · 56.8%"]
+        V9["<b>YOLOv9</b><br/>2024 · 55.6%"]
+        V4 --> V7 --> V9
+    end
+
+    subgraph Ultra["<b>🟠 Dòng Ultralytics (2020–2026)</b>"]
+        direction TB
+        V5["<b>YOLOv5</b><br/>2020 · 50.7%"]
+        V8["<b>YOLOv8</b><br/>2023 · 53.9%"]
+        Y11["<b>YOLO11</b><br/>2024 · 54.7%"]
+        Y26["<b>YOLO26</b><br/>2026 · ~57.2%"]
+        V5 --> V8 --> Y11 --> Y26
+    end
+
+    subgraph Indep["<b>🟣 Dòng Độc lập</b>"]
+        direction TB
+        V6["<b>YOLOv6</b><br/>2022 · Meituan"]
+        V10["<b>YOLOv10</b><br/>2024 · Tsinghua"]
+        V12["<b>YOLOv12</b><br/>2025 · Tian et al."]
+    end
+
+    subgraph Variants["<b>⚪ Biến thể ảnh hưởng</b>"]
+        direction TB
+        YOLOX["<b>YOLOX</b><br/>2021 · Megvii"]
+        PPYOLOE["<b>PP-YOLOE</b><br/>2022 · Baidu"]
+        YOLOWORLD["<b>YOLO-World</b><br/>2024 · Tencent"]
+        YOLOE["<b>YOLOE</b><br/>2025 · ICCV"]
+    end
+
+    V3 -.->|"Redmon dừng CV"| V4
+    V4 --> V5
+    YOLOX -.->|"anchor-free<br/>decoupled head"| V6
+    YOLOX -.->|"decoupled head"| V8
+    PPYOLOE -.->|"TAL"| V8
+    V8 -.-> V10
+    V10 -.-> V12
+    YOLOWORLD -.->|"open-vocab"| YOLOE
+
+    style V1 fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
+    style V2 fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
+    style V3 fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
+    style V4 fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+    style V7 fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+    style V9 fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+    style V5 fill:#fff3e0,stroke:#e65100,stroke-width:2px
+    style V8 fill:#fff3e0,stroke:#e65100,stroke-width:2px
+    style Y11 fill:#fff3e0,stroke:#e65100,stroke-width:2px
+    style Y26 fill:#ff6f00,stroke:#e65100,stroke-width:3px,color:#fff
+    style V6 fill:#f3e5f5,stroke:#6a1b9a,stroke-width:2px
+    style V10 fill:#f3e5f5,stroke:#6a1b9a,stroke-width:2px
+    style V12 fill:#f3e5f5,stroke:#6a1b9a,stroke-width:2px
+    style YOLOX fill:#f5f5f5,stroke:#757575,stroke-width:1px
+    style PPYOLOE fill:#f5f5f5,stroke:#757575,stroke-width:1px
+    style YOLOWORLD fill:#f5f5f5,stroke:#757575,stroke-width:1px
+    style YOLOE fill:#f5f5f5,stroke:#757575,stroke-width:1px
+</pre>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+mermaid.initialize({ startOnLoad: true, theme: 'base', themeVariables: { fontSize: '14px' } });
+</script>
+</body>
+</html>

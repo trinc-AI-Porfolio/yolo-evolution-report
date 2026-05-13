@@ -1,0 +1,50 @@
+\chapter{BƯỚC NGOẶT OPEN-VOCABULARY}
+
+\section{YOLO-World (2024) --- Tiên phong}
+\textbf{Paper:} ``YOLO-World: Real-Time Open-Vocabulary Object Detection'' \cite{yoloworld}\\
+\textbf{Tác giả:} Tencent AI Lab
+
+\subsection{Ý tưởng}
+Kết nối YOLO với CLIP text embeddings. \textbf{RepVL-PAN} (Re-parameterizable Vision-Language PAN) inject text features vào feature pyramid \cite{yoloworld}.
+
+\textbf{Prompt-then-Detect:} Nạp text prompts 1 lần (offline), sau đó detect real-time --- tách ``hiểu ngôn ngữ'' và ``detect'' thành 2 giai đoạn.
+
+\subsection{Kết quả}
+YOLO-World-L: 35.4\% AP (LVIS zero-shot), 52 FPS (V100). Mở đường cho YOLOE.
+
+\section{YOLOE (2025) --- Real-Time Seeing Anything}
+\textbf{Paper:} ``YOLOE: Real-Time Seeing Anything'' (ICCV 2025) \cite{yoloe}
+
+\subsection{Vấn đề}
+Closed-set YOLO chỉ detect classes đã train. Grounding DINO detect mọi thứ nhưng quá chậm (3--5 FPS). YOLOE kết hợp: \textbf{open-vocabulary + real-time}.
+
+\begin{analogybox}
+YOLO truyền thống giống \textbf{nhân viên bảo vệ chỉ nhận 80 khuôn mặt đã học}. YOLOE giống bảo vệ được đào tạo \textbf{nhận diện bất kỳ ai} --- chỉ cần bạn mô tả hoặc đưa ảnh mẫu.
+\end{analogybox}
+
+\subsection{Ba chế độ Prompt}
+\begin{table}[H]\centering
+\caption{3 chế độ prompt của YOLOE}
+\begin{tabular}{llll}\toprule
+\textbf{Chế độ} & \textbf{Input} & \textbf{Module} & \textbf{Cơ chế}\\\midrule
+Text Prompt & ``dog'', ``car'' & RepRTA & CLIP text embeddings \\
+Visual Prompt & Ảnh mẫu & SAVPE & Semantic + activation features \\
+Prompt-Free & Không cần & LRPC & Pre-compute 1203 categories \\\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Kết quả}
+\begin{table}[H]\centering
+\caption{YOLOE so sánh (LVIS zero-shot)}
+\begin{tabular}{lccc}\toprule
+\textbf{Model} & \textbf{AP (LVIS)} & \textbf{FPS} & \textbf{Ghi chú}\\\midrule
+YOLO-World-v2-L \cite{yoloworld} & 22.7\% & 52 & Chỉ text prompt \\
+\textbf{YOLOE-L} \cite{yoloe} & \textbf{27.1\%} & \textbf{48} & Text + Visual + Free \\
+Grounding DINO & 27.4\% & 3--5 & Chậm 10$\times$ \\\bottomrule
+\end{tabular}
+\end{table}
+
+\textit{Ghi chú: AP đo trên LVIS zero-shot --- thang đo hoàn toàn khác COCO closed-set, không so sánh trực tiếp.}
+
+\subsection{Ý nghĩa}
+YOLOE + YOLO-World đánh dấu bước chuyển từ ``detect N classes đã biết'' sang ``detect mọi thứ'' --- mở ra kỷ nguyên \textbf{open-vocabulary detection} trong real-time.
