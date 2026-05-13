@@ -17,11 +17,13 @@ DFL (Distribution Focal Loss, v8--v12) dự đoán phân phối 16 bins/coordina
 Với DFL 16 bins, mỗi anchor cần dự đoán $4 \times 16 = 64$ giá trị cho box regression (thay vì 4 giá trị trực tiếp). Trên toàn feature pyramid 3 scales ($80 \times 80 + 40 \times 40 + 20 \times 20 = 8400$ anchors):
 
 \begin{equation}
-\text{MAC}_{DFL} = 8400 \times 64 \times 4\text{B} = 2.15\text{MB/frame}
+\text{MAC}_{DFL} = 8400 \times 64 \times 4\text{B} = 2.15\text{ MB/frame}
 \end{equation}
 \begin{equation}
-\text{MAC}_{Direct} = 8400 \times 4 \times 4\text{B} = 0.13\text{MB/frame}
+\text{MAC}_{Direct} = 8400 \times 4 \times 4\text{B} = 0.13\text{ MB/frame}
 \end{equation}
+
+\textit{Ghi chú: Giả định float32 nên mỗi tham số chiếm 4 Bytes (4B).}
 
 Bỏ DFL giảm \textbf{16$\times$ bandwidth} cho box regression head. Trên NPU rẻ tiền (Jetson Nano, RK3588) có bus hẹp, đây là bottleneck nghiêm trọng. So sánh:
 
@@ -48,13 +50,13 @@ Area Attention (v12) & $\sim$5 MB & Kém (cần FP16) & Hạn chế \\\bottomrul
 m_{t+1} = \beta \cdot m_t + (1-\beta) \cdot \nabla_\theta \mathcal{L}_t
 \end{equation}
 \begin{equation}
-\hat{m}_{t+1} = \text{NewtonSchulz}(m_{t+1}) \approx U \Sigma^{-1/2} V^T \quad \text{(xấp xỉ SVD)}
+\hat{m}_{t+1} = \mathrm{NewtonSchulz}(m_{t+1}) \approx U \Sigma^{-1/2} V^T \quad \text{(xấp xỉ SVD)}
 \end{equation}
 \begin{equation}
 \theta_{t+1} = \theta_t - \eta \cdot \hat{m}_{t+1}
 \end{equation}
 
-Trong đó $\text{NewtonSchulz}$ là phép lặp Newton-Schulz xấp xỉ phân rã SVD trong 5 bước (thay vì $O(n^3)$ của SVD đầy đủ). Hiệu ứng: gradient được \textbf{chuẩn hóa trên manifold trọng số}, tránh kẹt ở local minima \cite{yolo26}.
+Trong đó $\mathrm{NewtonSchulz}$ là phép lặp Newton-Schulz xấp xỉ phân rã SVD trong 5 bước (thay vì $O(n^3)$ của SVD đầy đủ). Hiệu ứng: gradient được \textbf{chuẩn hóa trên manifold trọng số}, tránh kẹt ở local minima \cite{yolo26}.
 
 \begin{analogybox}
 \textbf{Leo núi trong sương mù:} SGD giống bạn chỉ cảm nhận \textbf{độ dốc ngay dưới chân} rồi bước xuống --- dễ kẹt ở thung lũng nhỏ. MuSGD giống có thêm \textbf{la bàn chiến lược} (Muon momentum) nhìn được xu hướng địa hình rộng hơn --- khi gặp thung lũng nhỏ, la bàn chỉ bạn bước qua vì phía sau còn thung lũng sâu hơn.
@@ -70,10 +72,10 @@ Trong đó $\text{NewtonSchulz}$ là phép lặp Newton-Schulz xấp xỉ phân 
 \textbf{Giải pháp --- Dynamic threshold:}
 
 \begin{equation}
-\tau(A_{gt}) = \tau_{base} \cdot \left(\frac{A_{max}}{A_{gt}}\right)^{\gamma}, \quad \gamma \in [0.3, 0.5]
+\tau(A_{gt}) = \tau_{base} \cdot \left(\frac{A_{gt}}{A_{max}}\right)^{\gamma}, \quad \gamma \in [0.3, 0.5]
 \end{equation}
 
-Trong đó $A_{gt}$ là diện tích ground truth, $A_{max}$ là diện tích GT lớn nhất trong batch, $\gamma$ kiểm soát mức nới lỏng. Khi $A_{gt}$ nhỏ $\rightarrow$ $\tau$ giảm $\rightarrow$ nhiều predictions đạt ngưỡng positive hơn \cite{yolo26}.
+Trong đó $A_{gt}$ là diện tích ground truth, $A_{max}$ là diện tích GT lớn nhất trong batch, $\gamma$ kiểm soát mức nới lỏng. Khi $A_{gt}$ nhỏ $\rightarrow$ phân số $\frac{A_{gt}}{A_{max}} < 1$ $\rightarrow$ $\tau$ giảm $\rightarrow$ hạ thấp ngưỡng, giúp nhiều predictions của vật nhỏ được dán nhãn positive hơn \cite{yolo26}.
 
 \begin{analogybox}
 \textbf{Thầy giáo ưu tiên học sinh yếu:} Học sinh giỏi (vật lớn) luôn được khen --- đã có motivation. Học sinh yếu (vật nhỏ) ít được chú ý. STAL hạ tiêu chuẩn khen thưởng cho nhóm yếu (nới $\tau$), để các em nhận nhiều feedback tích cực hơn $\rightarrow$ dần cải thiện.
