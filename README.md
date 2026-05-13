@@ -32,25 +32,6 @@
 | `so_sanh_da_chieu.md` | So sánh đa chiều: mAP, FPS, Params |
 | `yolo_bien_the.md` | Các biến thể: YOLOX, PP-YOLOE, YOLO-NAS, YOLO-World |
 
-## 🏗️ Cấu trúc báo cáo LaTeX
-
-```
-baocao_yolo_v2/
-├── main.tex              # File chính
-├── main.pdf              # PDF output (48 trang)
-├── chuong1_modau.tex     # Mở đầu
-├── chuong2_nentang.tex   # Nền tảng lý thuyết
-├── chuong3_yolov1v4.tex  # v1–v4
-├── chuong4_yolov5v8.tex  # v5–v8
-├── chuong5_yolov9v12.tex # v9–v12
-├── chuong6_yolo26.tex    # YOLO26 (chương riêng)
-├── chuong7_openvocab.tex # YOLOE + YOLO-World
-├── chuong8_bienthe.tex   # Biến thể công nghiệp
-├── chuong9_sosanhtonghop.tex # So sánh + Xu hướng
-├── chuong10_ketluan.tex  # Kết luận + Tài liệu tham khảo
-└── phuluc_thuatngu.tex   # Phụ lục thuật ngữ (40+ terms)
-```
-
 ## ✨ Điểm nổi bật
 - 🎯 **18 nguồn tài liệu tham khảo** khoa học
 - 📐 **Công thức toán học** đầy đủ (Loss, MuSGD, STAL, ProgLoss)
