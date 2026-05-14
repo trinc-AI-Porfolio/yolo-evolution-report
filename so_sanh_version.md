@@ -32,7 +32,7 @@
 ### v1 → v2: ✅ Tốt hơn rõ ràng
 | Góc nhìn | v1 | v2 | Nhận xét |
 |----------|----|----|---------|
-| Accuracy | 63.4% (VOC) | 78.6% (VOC) | v2 thắng tuyệt đối (+15%) |
+| Accuracy | 63.4% (VOC) | 78.6% (VOC) | v2 tốt hơn (+15%) |
 | Recall | 81% | 88% | Anchor boxes giúp nhiều |
 | Vật nhỏ | Rất yếu | Tốt hơn (passthrough) | Cải thiện nhưng vẫn chưa đủ |
 | Tốc độ | 45 FPS | 40-67 FPS | Tương đương |
@@ -42,8 +42,8 @@
 ### v2 → v3: ✅ Tốt hơn nhưng có trade-off
 | Góc nhìn | v2 | v3 | Nhận xét |
 |----------|----|----|---------|
-| Accuracy mAP50 | ~44% (COCO) | 57.9% | v3 thắng lớn |
-| Accuracy mAP50-95 | ~21% | 33.0% | v3 thắng |
+| Accuracy mAP50 | ~44% (COCO) | 57.9% | v3 tốt hơn|
+| Accuracy mAP50-95 | ~21% | 33.0% | v3 tốt hơn |
 | Backbone | Darknet-19 | Darknet-53 | Mạnh hơn nhưng nặng hơn |
 | Tốc độ | 67 FPS | 20-51 FPS | **v3 chậm hơn** ⚠️ |
 | Multi-scale | 1 scale | 3 scales | Đột phá |
@@ -57,121 +57,109 @@
 | Augmentation | Cơ bản | Mosaic, CutMix, SAT | Bước tiến lớn |
 | Loss | MSE-based | CIoU | Localization tốt hơn |
 | Framework | Darknet C | Darknet C | Vẫn khó dùng |
-**Kết luận: v4 vượt v3 hoàn toàn. Bước nhảy lớn nhất trong lịch sử YOLO.**
+**Kết luận: v4 tốt hơn v3 hoàn toàn. Bước nhảy lớn nhất trong lịch sử YOLO.**
 
 ### v4 → v5: ⚠️ Không rõ ràng — Phụ thuộc góc nhìn
-| Góc nhìn | v4 | v5 | Ai thắng? |
+| Góc nhìn | v4 | v5 | version nào tốt hơn? |
 |----------|----|----|----------|
 | Accuracy | 43.5% | 50.7% | v5 (nhưng so sánh không công bằng — v5 có nhiều sizes) |
 | Tốc độ | 65 FPS | Đa dạng (1.9M→86.7M) | v5 linh hoạt hơn |
-| Dễ dùng | ⭐⭐ (Darknet C) | ⭐⭐⭐⭐⭐ (pip install) | **v5 thắng tuyệt đối** |
-| Đóng góp kỹ thuật | CIoU, Mosaic, BoF/BoS | Không đột phá mới | **v4 thắng** |
-| Paper | Có (chi tiết) | Không | **v4 thắng** |
-| Community | Nhỏ | Rất lớn | v5 thắng |
+| Dễ dùng | Darknet C | pip install)| **v5 tốt hơn** |
+| Đóng góp kỹ thuật | CIoU, Mosaic, BoF/BoS | Không đột phá mới | **v4 tốt hơn** |
+| Paper | Có (chi tiết) | Không | **v4 tốt hơn** |
+| Community | Nhỏ | Rất lớn | v5 tốt hơn |
 **Kết luận: v5 dễ dùng hơn RẤT NHIỀU nhưng không đóng góp kỹ thuật mới. v4 đóng góp nhiều hơn cho lĩnh vực. Tùy bạn cần gì: dùng ngay → v5, nghiên cứu → v4.**
 
 ### v5 → v6: ⚠️ Không rõ ràng
-| Góc nhìn | v5 | v6 | Ai thắng? |
+| Góc nhìn | v5 | v6 | version nào tốt hơn? |
 |----------|----|----|----------|
-| Accuracy | 50.7% | 52.5% | v6 nhỉnh |
-| Tốc độ | Tốt | 520 FPS (TensorRT!) | v6 (nhưng đo khác điều kiện) |
-| Ecosystem | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ | **v5 thắng** |
-| Kỹ thuật mới | Ít | Re-param, TAL, Quantization | **v6 thắng** |
-| Community | Rất lớn | Nhỏ (Meituan nội bộ) | **v5 thắng** |
+| Accuracy | 50.7% | 52.5% | v6 nhỉnh hơn |
+| Tốc độ | Rất nhanh | 520 FPS (TensorRT!) | v6 (nhưng đo khác điều kiện) |
+| Ecosystem | Rất tốt | Trung bình | **v5 tốt hơn** |
+| Kỹ thuật mới | Ít | Re-param, TAL, Quantization | **v6 tốt hơn** |
+| Community | Rất lớn | Nhỏ (Meituan nội bộ) | **v5 tốt hơn** |
 **Kết luận: v6 kỹ thuật tốt hơn nhưng v5 dễ dùng hơn. Đa số người dùng vẫn chọn v5.**
 
 ### v6 → v7: ✅ v7 tốt hơn về accuracy
 | Góc nhìn | v6 | v7 | Nhận xét |
 |----------|----|----|---------|
-| Accuracy | 52.5% | 56.8% | v7 thắng lớn |
+| Accuracy | 52.5% | 56.8% | v7 tốt hơn |
 | Tốc độ | 520 FPS (TRT) | 36-161 FPS | **v6 nhanh hơn** (nhưng đo khác) |
 | Kiến trúc | EfficientRep | E-ELAN | Cả 2 đều sáng tạo |
-| Dễ dùng | ⭐⭐⭐ | ⭐⭐⭐ | Ngang nhau, đều khó hơn v5 |
+| Dễ dùng | Trung Bình | Trung Bình | Ngang nhau, đều khó hơn v5 |
 **Kết luận: v7 SOTA accuracy, v6 SOTA industrial speed. Khác mục đích.**
 
-### v7 → v8: ⚠️ PHỨC TẠP NHẤT — v8 thua v7 về accuracy!
-| Góc nhìn | v7 | v8 | Ai thắng? |
+### v7 → v8: ⚠️ PHỨC TẠP NHẤT — v8 tệ hơn v7 về accuracy!
+| Góc nhìn | v7 | v8 | version nào tốt hơn? |
 |----------|----|----|----------|
-| **mAP (best)** | **56.8%** | **53.9%** | **v7 thắng!** ⚠️ |
-| Ecosystem | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ | **v8 thắng** |
-| Multi-task | ⚠️ Det only | ✅ 6 tác vụ | **v8 thắng** |
+| **mAP (best)** | **56.8%** | **53.9%** | **v7 tốt hơn!** ⚠️ |
+| Ecosystem | Trung Bình | Rất tốt | **v8 tốt hơn** |
+| Multi-task | ⚠️ Det only | ✅ 6 tác vụ | **v8 tốt hơn** |
 | Anchor-free | ❌ (anchor) | ✅ | v8 hiện đại hơn |
 | DFL | ❌ | ✅ | v8 localization tốt hơn |
-| Dễ dùng | Khó | Rất dễ | **v8 thắng** |
-| Paper | Có (CVPR) | Không | **v7 thắng** |
+| Dễ dùng | Khó | Rất dễ | **v8 tốt hơn** |
+| Paper | Có (CVPR) | Không | **v7 tốt hơn** |
 
-**🔴 v8 THUA v7 về accuracy thuần túy!** v7-E6E (56.8%) > v8-X (53.9%). Tuy nhiên:
+**🔴 v8 tệ hơn v7 về accuracy thuần túy!** v7-E6E (56.8%) > v8-X (53.9%). Tuy nhiên:
 - So sánh không hoàn toàn công bằng: v7-E6E là model rất lớn, chạy 36 FPS
-- v8 thắng ở ecosystem, multi-task, dễ dùng
+- v8 tốt hơn về ecosystem, multi-task, dễ dùng
 - **Nếu cần accuracy tối đa → v7. Nếu cần đa năng + dễ dùng → v8.**
 
 ### v8 → v9: ✅ v9 tốt hơn về accuracy, kém ecosystem
 | Góc nhìn | v8 | v9 | Nhận xét |
 |----------|----|----|---------|
-| Accuracy | 53.9% | 55.6% | v9 thắng |
+| Accuracy | 53.9% | 55.6% | v9 tốt hơn |
 | Params | 68.2M (X) | 58.1M (E) | v9 hiệu quả hơn |
-| Đóng góp lý thuyết | Ít | PGI — rất sâu sắc | **v9 thắng** |
-| Ecosystem | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ | **v8 thắng** |
-| Multi-task | ✅ 6 tác vụ | ⚠️ Hạn chế | **v8 thắng** |
+| Đóng góp lý thuyết | Ít | PGI — rất sâu sắc | **v9 tốt hơn** |
+| Ecosystem | Rất tốt | Trung bình | **v8 tốt hơn** |
+| Multi-task | ✅ 6 tác vụ | ⚠️ Hạn chế | **v8 tốt hơn** |
 **Kết luận: v9 mạnh hơn kỹ thuật nhưng v8 hoàn thiện hơn cho production.**
 
 ### v9 → v10: ⚠️ Trade-off rõ ràng
 | Góc nhìn | v9 | v10 | Nhận xét |
 |----------|----|----|---------|
-| **mAP (best)** | **55.6%** | **54.4%** | **v9 thắng!** ⚠️ |
-| Params | 58.1M | 29.5M | **v10 thắng** (gần 2× ít hơn) |
-| NMS | Cần | Không cần | **v10 thắng** |
-| Multi-task | ⚠️ | ❌ Det only | **v9 thắng** |
-| Efficiency | Tốt | Rất tốt | v10 hiệu quả hơn |
+| **mAP (best)** | **55.6%** | **54.4%** | **v9 tốt hơn!** ⚠️ |
+| Params | 58.1M | 29.5M | **v10 tốt hơn** (gần 2× ít hơn) |
+| NMS | Cần | Không cần | **v10 tốt hơn** |
+| Multi-task | ⚠️ | ❌ Det only | **v9 tốt hơn** |
+| Efficiency | Tốt | Rất tốt | v10 tốt hơn |
 
-**🔴 v10 THUA v9 về accuracy!** v10-X (54.4%) < v9-E (55.6%). Nhưng v10 ít params hơn gần 2× và không cần NMS. **v10 đổi accuracy lấy efficiency.**
+**🔴 v10 tệ hơn v9 về accuracy!** v10-X (54.4%) < v9-E (55.6%). Nhưng v10 ít params hơn gần 2× và không cần NMS. **v10 đổi accuracy lấy efficiency.**
 
 ### v10 → v11: ✅ v11 tốt hơn hầu hết mặt
 | Góc nhìn | v10 | v11 | Nhận xét |
 |----------|----|----|---------|
-| Accuracy | 54.4% | 54.7% | v11 nhỉnh |
-| Multi-task | ❌ Det only | ✅ 6 tác vụ | **v11 thắng lớn** |
-| Ecosystem | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ | **v11 thắng** |
+| Accuracy | 54.4% | 54.7% | v11 tốt hơn |
+| Multi-task | ❌ Det only | ✅ 6 tác vụ | **v11 tốt hơn** |
+| Ecosystem | Trung bình | Rất tốt | **v11 tốt hơn** |
 | NMS-free | ✅ | ✅ | Ngang |
 | Attention | PSA (partial) | C2PSA | v11 phát triển hơn |
-**Kết luận: v11 tốt hơn v10 hầu hết mặt. Đời sau thắng đời trước.**
+**Kết luận: v11 tốt hơn v10 hầu hết mặt. Đời sau tốt hơn đời trước.**
 
 ### v11 → v12: ⚠️ Trade-off
 | Góc nhìn | v11 | v12 | Nhận xét |
 |----------|----|----|---------|
-| mAP (best) | 54.7% | 55.2% | v12 nhỉnh |
+| mAP (best) | 54.7% | 55.2% | v12 tốt hơn |
 | Kiến trúc | CNN-centric | Attention-centric | v12 hiện đại hơn |
-| Hardware yêu cầu | GPU thường | Cần FlashAttention | **v11 thắng** |
-| Ecosystem | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ | v11 nhỉnh |
-| Đóng góp lý thuyết | Ít | Area Attention, R-ELAN | **v12 thắng** |
+| Hardware yêu cầu | GPU thường | Cần FlashAttention | **v11 tốt hơn** |
+| Ecosystem | Rất tốt | tốt | v11 tốt hơn |
+| Đóng góp lý thuyết | Ít | Area Attention, R-ELAN | **v12 tốt hơn** |
 **Kết luận: v12 accuracy nhỉnh hơn nhưng cần GPU hiện đại hơn.**
 
 ### v12 → YOLO26: ✅ YOLO26 tốt hơn mọi mặt
 | Góc nhìn | v12 | YOLO26 | Nhận xét |
 |----------|----|----|---------|
-| mAP | 55.2% | 57.2% | **YOLO26 thắng (+2%)** |
-| Tốc độ CPU | Cơ bản | Nhanh hơn YOLO11 43% | **YOLO26 thắng** |
-| Vật nhỏ | Bình thường | STAL chuyên vật <8px | **YOLO26 thắng** |
-| Maturity | 4 tháng | Mới nhất | **v12 thắng** |
+| mAP | 55.2% | 57.2% | **YOLO26 tốt hơn (+2%)** |
+| Tốc độ CPU | Cơ bản | Nhanh hơn YOLO11 43% | **YOLO26 tốt hơn** |
+| Vật nhỏ | Bình thường | STAL chuyên vật <8px | **YOLO26 tốt hơn** |
+| Maturity | 4 tháng | Mới nhất | **v12 tốt hơn** |
 **Kết luận: YOLO26 vượt v12 nhưng còn quá mới.**
 
 ---
 
-## 3. CÁC VERSION BỊ THUA BỞI VERSION TRƯỚC
+## 3. SO SÁNH THEO TIÊU CHÍ CỤ THỂ
 
-| Trường hợp | Thua ở | Nhưng thắng ở |
-|-----------|--------|-------------|
-| **v8 thua v7** | mAP: 53.9% < 56.8% | Ecosystem, multi-task, dễ dùng |
-| **v10 thua v9** | mAP: 54.4% < 55.6% | Params ít 2×, NMS-free |
-| **v3 chậm hơn v2** | FPS: 20-51 < 40-67 | Accuracy tốt hơn nhiều |
-
-**Nhận xét:** Không có version nào thua hoàn toàn. Mỗi version "thua" ở 1 khía cạnh nhưng "thắng" ở khía cạnh khác → trade-off có chủ đích.
-
----
-
-## 4. SO SÁNH THEO TIÊU CHÍ CỤ THỂ
-
-### 4.1. Accuracy thuần túy (mAP50-95 COCO, best model)
+### 3.1. Accuracy thuần túy (mAP50-95 COCO, best model)
 ```
 v1 (VOC) → v2 (VOC) → v3 (33%) → v4 (43.5%) → v5 (50.7%) → v6 (52.5%)
 → v7 (56.8%) → v8 (53.9%) ← GIẢM! → v9 (55.6%) → v10 (54.4%) ← GIẢM!
@@ -179,7 +167,7 @@ v1 (VOC) → v2 (VOC) → v3 (33%) → v4 (43.5%) → v5 (50.7%) → v6 (52.5%)
 ```
 **Đỉnh cao accuracy:** v7 (56.8%) cho đến khi YOLO26 vượt qua (57.2%).
 
-### 4.2. Efficiency (mAP / Params)
+### 3.2. Efficiency (mAP / Params)
 | Version | mAP | Params | mAP/M params |
 |---------|-----|--------|:------------:|
 | v4 | 43.5% | ~64M | 0.68 |
@@ -190,7 +178,7 @@ v1 (VOC) → v2 (VOC) → v3 (33%) → v4 (43.5%) → v5 (50.7%) → v6 (52.5%)
 
 **v10 hiệu quả nhất** — cùng accuracy nhưng ít params nhất.
 
-### 4.3. Dễ dùng (Ecosystem)
+### 3.3. Dễ dùng (Ecosystem)
 ```
 Rất khó: v1, v2, v3 (Darknet C, compile thủ công)
 Khó: v4 (Darknet C, config phức tạp)
@@ -199,7 +187,7 @@ Dễ: v12 (Ultralytics nhưng mới), YOLOE, YOLO26
 Rất dễ: v5, v8, v11 (pip install, 1 dòng code train)
 ```
 
-### 4.4. Đóng góp lý thuyết
+### 3.4. Đóng góp lý thuyết
 | Hạng | Version | Đóng góp |
 |:----:|---------|---------|
 | 🥇 | v1 | Single-stage detection — thay đổi cả lĩnh vực |
@@ -212,7 +200,7 @@ Rất dễ: v5, v8, v11 (pip install, 1 dòng code train)
 | 8 | v7 | E-ELAN + planned re-param |
 | 9 | v2 | Anchor boxes, BN, WordTree |
 
-### 4.5. Phù hợp production (2026)
+### 3.5. Phù hợp production (2026)
 | Hạng | Version | Lý do |
 |:----:|---------|-------|
 | 🥇 | YOLO11 | Đa năng nhất, ổn định, ecosystem tốt |
@@ -222,7 +210,7 @@ Rất dễ: v5, v8, v11 (pip install, 1 dòng code train)
 
 ---
 
-## 5. MỐI QUAN HỆ ẢNH HƯỞNG
+## 4. MỐI QUAN HỆ ẢNH HƯỞNG
 
 ```
 v1 (Redmon) → v2 (Redmon) → v3 (Redmon) ──→ DỪNG
@@ -244,7 +232,7 @@ Nhánh phụ:
 
 ---
 
-## 6. KẾT LUẬN
+## 5. KẾT LUẬN
 
 **Không có "version tốt nhất tuyệt đối"** — mỗi version tối ưu cho 1 mục đích khác nhau:
 
