@@ -5,7 +5,7 @@
 ## 📖 Nội dung
 
 ### 📄 Báo cáo chính
-- [`baocao_yolo_v2/main.pdf`](baocao_yolo_v2/main.pdf) — **Báo cáo LaTeX hoàn chỉnh** (48 trang, 10 chương)
+- [`baocao_yolo_v2/main.pdf`](main.pdf) — **Báo cáo LaTeX hoàn chỉnh** (48 trang, 10 chương)
 
 ### 📝 Tài liệu dịch & phân tích từng version
 | File | Nội dung |
