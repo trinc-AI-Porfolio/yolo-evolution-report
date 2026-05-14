@@ -10,20 +10,20 @@
 ### 📝 Tài liệu dịch & phân tích từng version
 | File | Nội dung |
 |:--|:--|
-| `dich_yolov1.md` | YOLOv1 — Khởi nguồn Single-stage Detection |
-| `dich_yolov2.md` | YOLOv2/YOLO9000 — Better, Faster, Stronger |
-| `dich_yolov3.md` | YOLOv3 — Multi-Scale Detection |
-| `dich_yolov4.md` | YOLOv4 — Tập đại thành (BoF/BoS) |
-| `dich_yolov5.md` | YOLOv5 — Dân chủ hóa YOLO (PyTorch) |
-| `dich_yolov6.md` | YOLOv6 — Industrial Deployment (Re-param) |
-| `dich_yolov7.md` | YOLOv7 — SOTA Accuracy (E-ELAN) |
-| `dich_yolov8.md` | YOLOv8 — Đa năng nhất (Anchor-free, 6 tasks) |
-| `dich_yolov9.md` | YOLOv9 — PGI & Information Bottleneck |
-| `dich_yolov10.md` | YOLOv10 — NMS-Free Detection |
-| `dich_yolo11.md` | YOLO11 — C3K2 & C2PSA |
-| `dich_yolov12.md` | YOLOv12 — Attention-Centric |
-| `dich_yoloe.md` | YOLOE — Open-Vocabulary Real-Time |
-| `dich_yolo26.md` | YOLO26 — Edge-First Design (MuSGD, STAL) |
+| `yolov1.md` | YOLOv1 — Khởi nguồn Single-stage Detection |
+| `yolov2.md` | YOLOv2/YOLO9000 — Better, Faster, Stronger |
+| `yolov3.md` | YOLOv3 — Multi-Scale Detection |
+| `yolov4.md` | YOLOv4 — Tập đại thành (BoF/BoS) |
+| `yolov5.md` | YOLOv5 — Dân chủ hóa YOLO (PyTorch) |
+| `yolov6.md` | YOLOv6 — Industrial Deployment (Re-param) |
+| `yolov7.md` | YOLOv7 — SOTA Accuracy (E-ELAN) |
+| `yolov8.md` | YOLOv8 — Đa năng nhất (Anchor-free, 6 tasks) |
+| `yolov9.md` | YOLOv9 — PGI & Information Bottleneck |
+| `yolov10.md` | YOLOv10 — NMS-Free Detection |
+| `yolo11.md` | YOLO11 — C3K2 & C2PSA |
+| `yolov12.md` | YOLOv12 — Attention-Centric |
+| `yoloe.md` | YOLOE — Open-Vocabulary Real-Time |
+| `yolo26.md` | YOLO26 — Edge-First Design (MuSGD, STAL) |
 
 ### 📊 Tài liệu tổng hợp
 | File | Nội dung |
