@@ -42,7 +42,7 @@
 ### v2 → v3: ✅ Tốt hơn nhưng có trade-off
 | Góc nhìn | v2 | v3 | Nhận xét |
 |----------|----|----|---------|
-| Accuracy mAP50 | ~44% (COCO) | 57.9% | v3 thắng lớn |
+| Accuracy mAP50 | ~44% (COCO) | 57.9% | v3 tốt hơn  |
 | Accuracy mAP50-95 | ~21% | 33.0% | v3 thắng |
 | Backbone | Darknet-19 | Darknet-53 | Mạnh hơn nhưng nặng hơn |
 | Tốc độ | 67 FPS | 20-51 FPS | **v3 chậm hơn** ⚠️ |
