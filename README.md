@@ -29,16 +29,6 @@
 
 **[📄 Report_Yolo_Version.pdf](baocao_yolo_v2/Report_Yolo_Version.pdf)** — Báo cáo LaTeX hoàn chỉnh (41 trang, 9 chương)
 
-Nội dung bao gồm:
-- Chương 1–2: Giới thiệu & Lịch sử Object Detection
-- Chương 3: Thế hệ đầu — YOLOv1 → YOLOv4 (2015–2020)
-- Chương 4: Thế hệ mở rộng — YOLOv5 → YOLOv8 (2020–2023)
-- Chương 5: Thế hệ hiện đại — YOLOv9 → YOLOv12 (2024–2025)
-- Chương 6: YOLO26 — Thế hệ mới nhất (2026)
-- Chương 7: Các biến thể — YOLOX, PP-YOLOE, YOLO-NAS, YOLO-World, YOLOE
-- Chương 8: Ứng dụng thực tế & Edge AI
-- Chương 9: Sơ đồ phả hệ, Bảng tổng quan, Biểu đồ xếp hạng & Kết luận
-
 ---
 
 ## 📁 Yolo_Version — Chi tiết từng phiên bản
