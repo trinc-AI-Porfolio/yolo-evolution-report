@@ -328,20 +328,6 @@ Task:      Detection only → +Seg+Cls → +Pose+OBB+Track
 Vocab:     Closed-set → Open-vocabulary (YOLO-World, YOLOE)
 ```
 
-## Sơ đồ ảnh hưởng
-
-```
-YOLOv1→v2→v3 (Joseph Redmon)
-      ↓
-YOLOv4 (Bochkovskiy) ←── YOLOR, Scaled-v4 ──→ YOLOv7 (Wang)
-      ↓                                            ↓
-YOLOv5 (Ultralytics) ──→ YOLOv8 ──→ YOLO11 ──→ YOLO26
-      ↑                    ↑
-YOLOX (decoupled head)    PP-YOLOE (TAL)
-                           ↑
-                    YOLO-World ──→ YOLOE (open-vocab)
-```
-
 ---
 
 # PHẦN 4: HƯỚNG DẪN CHỌN PHIÊN BẢN
