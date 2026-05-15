@@ -109,9 +109,9 @@
 |----------|----|----|----------|
 | **mAP (best)** | **56.8%** | **53.9%** | **v7 tốt hơn!** ⚠️ |
 | Ecosystem | Trung Bình | Rất tốt | **v8 tốt hơn** |
-| Multi-task | ⚠️ Det only | ✅ 6 tác vụ | **v8 tốt hơn** |
-| Anchor-free | ❌ (anchor) | ✅ | v8 hiện đại hơn |
-| DFL | ❌ | ✅ | v8 localization tốt hơn |
+| Multi-task | ⚠️ Det only | ⭕  6 tác vụ | **v8 tốt hơn** |
+| Anchor-free | ❌ (anchor) | ⭕  | v8 hiện đại hơn |
+| DFL | ❌ | ⭕  | v8 localization tốt hơn |
 | Dễ dùng | Khó | Rất dễ | **v8 tốt hơn** |
 | Paper | Có (CVPR) | Không | **v7 tốt hơn** |
 
@@ -149,7 +149,7 @@
 | Góc nhìn | v10 | v11 | Nhận xét |
 |----------|----|----|---------|
 | Accuracy | 54.4% | 54.7% | v11 tốt hơn |
-| Multi-task | ❌ Det only | ✅ 6 tác vụ | **v11 tốt hơn** |
+| Multi-task | ❌ Det only | ⭕  6 tác vụ | **v11 tốt hơn** |
 | Ecosystem | Trung bình | Rất tốt | **v11 tốt hơn** |
 | NMS-free | ⭕ | ⭕ | Ngang |
 | Attention | PSA (partial) | C2PSA | v11 phát triển hơn |
