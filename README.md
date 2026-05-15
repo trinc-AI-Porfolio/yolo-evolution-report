@@ -34,20 +34,20 @@
 
 | File | Phiên bản | Điểm nhấn |
 |:--|:--|:--|
-| - [YOLOv1](./Yolo_Version/yolov1.md) | YOLOv1 (2015) | Khởi nguồn Single-stage Detection |
-| `yolov2.md` | YOLOv2 (2016) | Anchor boxes, Batch Normalization |
-| `yolov3.md` | YOLOv3 (2018) | Multi-Scale Detection (FPN) |
-| `yolov4.md` | YOLOv4 (2020) | Gộp những gì tốt nhất BoF/BoS, CIoU, Mosaic |
-| `yolov5.md` | YOLOv5 (2020) | PyTorch, pip install|
-| `yolov6.md` | YOLOv6 (2022) | Industrial Deployment (Re-param, Quantization) |
-| `yolov7.md` | YOLOv7 (2022) | SOTA Accuracy (E-ELAN, 56.8% mAP) |
-| `yolov8.md` | YOLOv8 (2023) | Đa năng nhất (Anchor-free, 6 tasks) |
-| `yolov9.md` | YOLOv9 (2024) | PGI & Information Bottleneck |
-| `yolov10.md` | YOLOv10 (2024) | NMS-Free, hiệu quả params nhất |
-| `yolo11.md` | YOLO11 (2024) | C3K2, C2PSA |
-| `yolov12.md` | YOLOv12 (2025) | Attention-Centric (R-ELAN, Area Attention) |
-| `yolo26.md` | YOLO26 (2026) | Edge-First Design (MuSGD, STAL, No DFL) |
-| `yoloe.md` | YOLOE (2025) | Open-Vocabulary Real-Time Detection |
+| [YOLOv1](./Yolo_Version/yolov1.md) | YOLOv1 (2015) | Khởi nguồn Single-stage Detection |
+| [YOLOv2](./Yolo_Version/yolov2.md) | YOLOv2 (2016) | Anchor boxes, Batch Normalization |
+| [YOLOv3](./Yolo_Version/yolov3.md) | YOLOv3 (2018) | Multi-Scale Detection (FPN) |
+| [YOLOv4](./Yolo_Version/yolov4.md) | YOLOv4 (2020) | Gộp những gì tốt nhất BoF/BoS, CIoU, Mosaic |
+| [YOLOv5](./Yolo_Version/yolov5.md) | YOLOv5 (2020) | PyTorch, pip install|
+| [YOLOv6](./Yolo_Version/yolov6.md) | YOLOv6 (2022) | Industrial Deployment (Re-param, Quantization) |
+| [YOLOv7](./Yolo_Version/yolov7.md) | YOLOv7 (2022) | SOTA Accuracy (E-ELAN, 56.8% mAP) |
+| [YOLOv8](./Yolo_Version/yolov8.md) | YOLOv8 (2023) | Đa năng nhất (Anchor-free, 6 tasks) |
+| [YOLOv9](./Yolo_Version/yolov9.md) | YOLOv9 (2024) | PGI & Information Bottleneck |
+| [YOLOv10](./Yolo_Version/yolov10.md) | YOLOv10 (2024) | NMS-Free, hiệu quả params nhất |
+| [YOLO11](./Yolo_Version/yolo11.md) | YOLO11 (2024) | C3K2, C2PSA |
+| [YOLOv12](./Yolo_Version/yolov12.md) | YOLOv12 (2025) | Attention-Centric (R-ELAN, Area Attention) |
+| [YOLO26](./Yolo_Version/yolo26.md) | YOLO26 (2026) | Edge-First Design (MuSGD, STAL, No DFL) |
+| [YOLOE](./Yolo_Version/yoloe.md) | YOLOE (2025) | Open-Vocabulary Real-Time Detection |
 
 Note: NMS (Non-Maximum Suppression) là một thuật toán hậu xử lý (post-processing)
 ---
