@@ -216,7 +216,7 @@ Rất dễ: v5, v8, v11 (pip install, 1 dòng code train)
 | 🥇 | v1 | Single-stage detection — thay đổi cả lĩnh vực |
 | 🥈 | v9 | Information Bottleneck + PGI — lý thuyết sâu nhất |
 | 🥉 | v4 | BoF/BoS methodology — hệ thống hóa kỹ thuật |
-| 4 | v10 | NMS-free — giải quyết vấn đề 9 năm |
+| 4 | v10 | NMS-free - Giải quyết bài toán hậu xử lý |
 | 5 | v12 | Attention-centric — mở kỷ nguyên mới |
 | 6 | v3 | Multi-scale prediction — giải quyết vật nhỏ |
 | 7 | YOLOE | Open-vocabulary real-time |
