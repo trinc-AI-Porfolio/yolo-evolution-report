@@ -64,6 +64,7 @@
 | Augmentation | Cơ bản | Mosaic, CutMix, SAT | Bước tiến lớn |
 | Loss | MSE-based | CIoU | Localization tốt hơn |
 | Framework | Darknet C | Darknet C | Vẫn khó dùng |
+
 **Kết luận: v4 tốt hơn v3 hoàn toàn. Bước nhảy lớn nhất trong lịch sử YOLO.**
 
 ### v4 → v5: Không rõ ràng — Phụ thuộc góc nhìn
