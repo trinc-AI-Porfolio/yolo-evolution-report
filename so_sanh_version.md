@@ -26,7 +26,7 @@
 | YOLO26 | 2026 | 57.2% (COCO) | ~60M | 50-300 | ❌ | ❌ | ⭕⭕ | ❌ |
 
 *\* v6 FPS đo trên TensorRT FP16, khác điều kiện. YOLOE đo trên LVIS zero-shot (thang đo khác).*
-*\* NMS (Non-Maximum Suppression) là một thuật toán hậu xử lý (post-processing)
+*\* NMS (Non-Maximum Suppression) là một thuật toán hậu xử lý (post-processing).*
 ---
 
 ## 2. SO SÁNH TỪNG CẶP: ĐỜI SAU CÓ THẬT SỰ TỐT HƠN ĐỜI TRƯỚC?
