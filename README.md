@@ -34,7 +34,7 @@
 
 | File | Phiên bản | Điểm nhấn |
 |:--|:--|:--|
-| `yolov1.md` | YOLOv1 (2015) | Khởi nguồn Single-stage Detection |
+| - [YOLOv1](./Yolo_Version/yolov1.md) | YOLOv1 (2015) | Khởi nguồn Single-stage Detection |
 | `yolov2.md` | YOLOv2 (2016) | Anchor boxes, Batch Normalization |
 | `yolov3.md` | YOLOv3 (2018) | Multi-Scale Detection (FPN) |
 | `yolov4.md` | YOLOv4 (2020) | Gộp những gì tốt nhất BoF/BoS, CIoU, Mosaic |
