@@ -47,7 +47,7 @@
 | `yolov1.md` | YOLOv1 (2015) | Khởi nguồn Single-stage Detection |
 | `yolov2.md` | YOLOv2 (2016) | Anchor boxes, Batch Normalization |
 | `yolov3.md` | YOLOv3 (2018) | Multi-Scale Detection (FPN) |
-| `yolov4.md` | YOLOv4 (2020) | Tập đại thành — BoF/BoS, CIoU, Mosaic |
+| `yolov4.md` | YOLOv4 (2020) | Gộp những gì tốt nhất BoF/BoS, CIoU, Mosaic |
 | `yolov5.md` | YOLOv5 (2020) | Dân chủ hóa YOLO (PyTorch, pip install) |
 | `yolov6.md` | YOLOv6 (2022) | Industrial Deployment (Re-param, Quantization) |
 | `yolov7.md` | YOLOv7 (2022) | SOTA Accuracy (E-ELAN, 56.8% mAP) |
@@ -59,6 +59,7 @@
 | `yolo26.md` | YOLO26 (2026) | Edge-First Design (MuSGD, STAL, No DFL) |
 | `yoloe.md` | YOLOE (2025) | Open-Vocabulary Real-Time Detection |
 
+Note: NMS (Non-Maximum Suppression) là một thuật toán hậu xử lý (post-processing)
 ---
 
 ## 📊 Tài liệu so sánh & phân tích
