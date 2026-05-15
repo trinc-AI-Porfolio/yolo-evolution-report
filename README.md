@@ -38,7 +38,7 @@
 | `yolov2.md` | YOLOv2 (2016) | Anchor boxes, Batch Normalization |
 | `yolov3.md` | YOLOv3 (2018) | Multi-Scale Detection (FPN) |
 | `yolov4.md` | YOLOv4 (2020) | Gộp những gì tốt nhất BoF/BoS, CIoU, Mosaic |
-| `yolov5.md` | YOLOv5 (2020) | Dân chủ hóa YOLO (PyTorch, pip install) |
+| `yolov5.md` | YOLOv5 (2020) | PyTorch, pip install|
 | `yolov6.md` | YOLOv6 (2022) | Industrial Deployment (Re-param, Quantization) |
 | `yolov7.md` | YOLOv7 (2022) | SOTA Accuracy (E-ELAN, 56.8% mAP) |
 | `yolov8.md` | YOLOv8 (2023) | Đa năng nhất (Anchor-free, 6 tasks) |
