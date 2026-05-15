@@ -44,7 +44,6 @@ Chia ảnh thành lưới 7×7 (49 ô). Mỗi ô dự đoán 2 box + 20 classes.
 
 **✅ Ưu:** Cực nhanh, real-time đầu tiên, hiểu context toàn ảnh  
 **❌ Nhược:** Vật nhỏ kém (grid thô), localization sai, mỗi ô chỉ 1 class  
-> *Tóm: Sinh viên mới ra trường — nhanh nhưng thiếu kinh nghiệm*
 
 ---
 
@@ -62,7 +61,6 @@ Chia ảnh thành lưới 7×7 (49 ô). Mỗi ô dự đoán 2 box + 20 classes.
 
 **✅ Ưu:** Chính xác hơn v1, anchor cải thiện recall, linh hoạt input size  
 **❌ Nhược:** Chỉ 1 scale, 1 box = 1 class (Softmax)  
-> *Tóm: Đã đi làm 1 năm — kỹ năng tốt hơn nhưng vẫn có giới hạn*
 
 ---
 
@@ -80,7 +78,6 @@ Chia ảnh thành lưới 7×7 (49 ô). Mỗi ô dự đoán 2 box + 20 classes.
 
 **✅ Ưu:** Vật nhỏ tốt hơn, backbone mạnh (residual), multi-label  
 **❌ Nhược:** Vật cỡ trung bình chưa tối ưu, anchor cố định  
-> *Tóm: Nhân viên senior — nhìn vấn đề từ nhiều góc độ*
 
 ---
 
@@ -100,7 +97,6 @@ Gom mọi kỹ thuật hay nhất:
 
 **✅ Ưu:** Accuracy nhảy vọt (+10.5%), train được 1 GPU, CIoU Loss  
 **❌ Nhược:** Config phức tạp, Darknet (C) khó customize  
-> *Tóm: Tiến sĩ tổng hợp — gom mọi tri thức thành hệ thống*
 
 ---
 
@@ -123,7 +119,6 @@ results = model('anh.jpg')  # 3 dòng code!
 
 **✅ Ưu:** Dễ nhất (pip install), PyTorch, community khổng lồ, export đa nền tảng  
 **❌ Nhược:** Không paper, tên gây tranh cãi, anchor-based  
-> *Tóm: iPhone — không mạnh nhất nhưng ai cũng dùng được*
 
 ---
 
@@ -153,7 +148,6 @@ results = model('anh.jpg')  # 3 dòng code!
 
 **✅ Ưu:** SOTA accuracy 2022, E-ELAN tối ưu gradient  
 **❌ Nhược:** Code phức tạp, anchor-based, ecosystem hạn chế  
-> *Tóm: Vận động viên đỉnh cao — thành tích tốt nhất nhưng cần HLV giỏi*
 
 ---
 
@@ -170,7 +164,6 @@ Multi-task: Detection + Segmentation + Classification + Pose + OBB + Tracking
 
 **✅ Ưu:** Multi-task tốt nhất, anchor-free, API thống nhất, community lớn nhất  
 **❌ Nhược:** Không paper, vẫn cần NMS  
-> *Tóm: Dao Thụy Sĩ — làm được MỌI THỨ*
 
 ---
 
@@ -186,7 +179,6 @@ Multi-task: Detection + Segmentation + Classification + Pose + OBB + Tracking
 
 **✅ Ưu:** PGI đột phá lý thuyết, ít params mà accuracy cao, lightweight models cải thiện rõ  
 **❌ Nhược:** Training phức tạp, NMS, community nhỏ  
-> *Tóm: Nhà khoa học — giải quyết vấn đề gốc rễ*
 
 ---
 
@@ -202,7 +194,6 @@ Multi-task: Detection + Segmentation + Classification + Pose + OBB + Tracking
 
 **✅ Ưu:** NMS-free (giảm latency), true end-to-end, ít params nhất (29.5M!)  
 **❌ Nhược:** Training phức tạp, ecosystem non trẻ, ít multi-task  
-> *Tóm: Dây chuyền tự động — bỏ kiểm tra thủ công*
 
 ---
 
@@ -216,7 +207,6 @@ Multi-task: Detection + Segmentation + Classification + Pose + OBB + Tracking
 
 **✅ Ưu:** Ít params hơn v8 mà accuracy cao hơn, multi-task + tracking, spatial attention  
 **❌ Nhược:** Cải tiến incremental, không paper  
-> *Tóm: Update iOS mới — mọi thứ tốt hơn 1 chút*
 
 ---
 
@@ -234,7 +224,6 @@ Bản đầu tiên dùng **Attention** làm core thay CNN. Area Attention chia f
 
 **✅ Ưu:** Attention-centric đầu tiên mà vẫn real-time, mAP cao nhất (tại thời điểm)  
 **❌ Nhược:** Cần GPU hiện đại, edge deployment khó  
-> *Tóm: Tesla — công nghệ mới nhất, cần hạ tầng phù hợp*
 
 ---
 
@@ -251,7 +240,6 @@ Bản đầu tiên dùng **Attention** làm core thay CNN. Area Attention chia f
 
 **✅ Ưu:** Detect vật mới không cần train lại, 3 modes, vượt YOLO-World  
 **❌ Nhược:** Zero-shot accuracy thấp hơn closed-set, cần CLIP  
-> *Tóm: Bảo vệ đa năng — mô tả, đưa ảnh, hoặc tự tìm đều được*
 
 ---
 
@@ -270,7 +258,6 @@ Bản đầu tiên dùng **Attention** làm core thay CNN. Area Attention chia f
 
 **✅ Ưu:** Nhanh nhất CPU/edge, mAP cao nhất YOLO family, export dễ nhất  
 **❌ Nhược:** Mới (01/2026), bỏ DFL có thể giảm localization  
-> *Tóm: Xe điện economy — tiết kiệm, nhanh, phù hợp đại chúng*
 
 ---
 
@@ -309,25 +296,26 @@ Open-vocabulary đầu tiên cho YOLO. Text prompt detect. Tiền nhiệm YOLOE.
 | # | Version | Năm | mAP (best) | Anchor | NMS | Multi-Task | 
 |---|---------|-----|-----------|:------:|:---:|:----------:|
 | 1 | v1 | 2015 | 33% | ❌ | Cần | ❌ | 
-| 2 | v2 | 2016 | 34% | ✅ | Cần | ❌ | 
-| 3 | v3 | 2018 | 33% | ✅ | Cần | ❌ | 
-| 4 | v4 | 2020 | 43.5% | ✅ | Cần | ❌ | 
-| 5 | v5 | 2020 | 50.7% | ✅ | Cần | ⚠️ | 
+| 2 | v2 | 2016 | 34% | ⭕  | Cần | ❌ | 
+| 3 | v3 | 2018 | 33% | ⭕  | Cần | ❌ | 
+| 4 | v4 | 2020 | 43.5% | ⭕  | Cần | ❌ | 
+| 5 | v5 | 2020 | 50.7% | ⭕  | Cần | ⚠️ | 
 | 6 | v6 | 2022 | 52.5% | ❌ | Cần | ❌ | 
-| 7 | v7 | 2022 | 56.8% | ✅ | Cần | ⚠️ | 
-| 8 | v8 | 2023 | 53.9% | ❌ | Cần | ✅ | 
+| 7 | v7 | 2022 | 56.8% | ⭕  | Cần | ⚠️ | 
+| 8 | v8 | 2023 | 53.9% | ❌ | Cần | ⭕  | 
 | 9 | v9 | 2024 | 55.6% | ❌ | Cần | ⚠️ | 
 | 10 | v10 | 2024 | 54.4% | ❌ | ❌ | ❌ | 
-| 11 | v11 | 2024 | 54.7% | ❌ | ❌ | ✅ | 
-| 12 | v12 | 2025 | 55.2% | ❌ | ❌ | ✅ | 
-| 13 | YOLOE | 2025 | 27%* | ❌ | Tùy | ✅ | 
-| 14 | YOLO26 | 2026 | **57.2%** | ❌ | ❌ | ✅ | 
+| 11 | v11 | 2024 | 54.7% | ❌ | ❌ | ⭕  | 
+| 12 | v12 | 2025 | 55.2% | ❌ | ❌ | ⭕  | 
+| 13 | YOLOE | 2025 | 27%* | ❌ | Tùy | ⭕ | 
+| 14 | YOLO26 | 2026 | **57.2%** | ❌ | ❌ | ⭕ | 
 | — | YOLOX | 2021 | 51.2% | ❌ | Cần | ❌ | 
 | — | PP-YOLOE | 2022 | 53.3% | ❌ | Cần | ❌ | 
 | — | YOLO-NAS | 2023 | 52.2% | ❌ | Cần | ❌ | 
 | — | YOLO-World | 2024 | 32.5%* | ❌ | Cần | ⚠️ | 
 
 *\* LVIS zero-shot — thang đo khác COCO closed-set*
+*\* NMS (Non-Maximum Suppression - Ức chế không tối đa)là một kỹ thuật hậu xử lý (post-processing)*
 
 ## Xu hướng phát triển
 
