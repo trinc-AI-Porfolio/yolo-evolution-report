@@ -30,6 +30,15 @@
 **[📄 Report_Yolo_Version.pdf](baocao_yolo_v2/Report_Yolo_Version.pdf)** — Báo cáo LaTeX hoàn chỉnh (41 trang, 9 chương)
 
 ---
+## 📈 Biểu đồ minh họa (trong báo cáo PDF)
+
+| Biểu đồ | Mô tả |
+|:--|:--|
+| 🌳 Sơ đồ phả hệ | 5 nhóm phát triển: Redmon, Wang, Ultralytics, Độc lập, Biến thể |
+| 📊 Xếp hạng mAP | 15 models sắp xếp từ cao → thấp (YOLO26-X dẫn đầu 57.2%) |
+| 🔧 Tiến hóa công nghệ | 7 trục: Backbone, Neck, Anchor, NMS, Loss, Optimizer, Label Assignment |
+| 📋 Bảng tổng quan | 13 phiên bản chính với VOC/COCO, FPS, Params, Anchor, NMS, Paper |
+---
 
 ## 📁 Yolo_Version — Chi tiết từng phiên bản
 
@@ -62,22 +71,10 @@
 
 ---
 
-## 📈 Biểu đồ minh họa (trong báo cáo PDF)
-
-| Biểu đồ | Mô tả |
-|:--|:--|
-| 🌳 Sơ đồ phả hệ | 5 nhóm phát triển: Redmon, Wang, Ultralytics, Độc lập, Biến thể |
-| 📊 Xếp hạng mAP | 15 models sắp xếp từ cao → thấp (YOLO26-X dẫn đầu 57.2%) |
-| 🔧 Tiến hóa công nghệ | 7 trục: Backbone, Neck, Anchor, NMS, Loss, Optimizer, Label Assignment |
-| 📋 Bảng tổng quan | 13 phiên bản chính với VOC/COCO, FPS, Params, Anchor, NMS, Paper |
-
----
-
 ## ✨ Điểm nổi bật
 
 - 🎯 **18 nguồn tài liệu tham khảo** từ các paper gốc
 - 📐 **Công thức toán học** đầy đủ (Loss, MuSGD, STAL, ProgLoss)
-- 🧠 **Ví dụ thực tế** cho người không chuyên dễ hiểu
 - 📊 **4 biểu đồ trực quan** (Phả hệ, Xếp hạng, Tiến hóa, Tổng quan)
 - ⚡ **Phân tích Edge AI** (MAC, NPU, INT8, TensorRT)
 
