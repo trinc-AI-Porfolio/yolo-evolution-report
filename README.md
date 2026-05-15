@@ -29,16 +29,6 @@
 
 **[📄 Report_Yolo_Version.pdf](baocao_yolo_v2/Report_Yolo_Version.pdf)** — Báo cáo LaTeX hoàn chỉnh (41 trang, 9 chương)
 
----
-## 📈 Biểu đồ minh họa (trong báo cáo PDF)
-
-| Biểu đồ | Mô tả |
-|:--|:--|
-| 🌳 Sơ đồ phả hệ | 5 nhóm phát triển: Redmon, Wang, Ultralytics, Độc lập, Biến thể |
-| 📊 Xếp hạng mAP | 15 models sắp xếp từ cao → thấp (YOLO26-X dẫn đầu 57.2%) |
-| 🔧 Tiến hóa công nghệ | 7 trục: Backbone, Neck, Anchor, NMS, Loss, Optimizer, Label Assignment |
-| 📋 Bảng tổng quan | 13 phiên bản chính với VOC/COCO, FPS, Params, Anchor, NMS, Paper |
----
 
 ## 📁 Yolo_Version — Chi tiết từng phiên bản
 
@@ -69,15 +59,6 @@ Note: NMS (Non-Maximum Suppression) là một thuật toán hậu xử lý (post
 | [`so_sanh_version.md`](so_sanh_version.md) | So sánh đa chiều: mAP, FPS, Params, Ecosystem |
 | [`uu_diem_va_nhuoc_diem_cac_version.md`](uu_diem_va_nhuoc_diem_cac_version.md) | Ưu điểm & nhược điểm chi tiết từng version |
 | [`Yolo_Bien_The/yolo_bien_the.md`](Yolo_Bien_The/yolo_bien_the.md) | Các biến thể: YOLOX, PP-YOLOE, YOLO-NAS, YOLO-World |
-
----
-
-## ✨ Điểm nổi bật
-
-- 🎯 **18 nguồn tài liệu tham khảo** từ các paper gốc
-- 📐 **Công thức toán học** đầy đủ (Loss, MuSGD, STAL, ProgLoss)
-- 📊 **4 biểu đồ trực quan** (Phả hệ, Xếp hạng, Tiến hóa, Tổng quan)
-- ⚡ **Phân tích Edge AI** (MAC, NPU, INT8, TensorRT)
 
 ---
 
