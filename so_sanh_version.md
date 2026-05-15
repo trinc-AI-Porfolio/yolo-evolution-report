@@ -185,10 +185,9 @@
 ### 3.1. Accuracy thuần túy (mAP50-95 COCO, best model)
 ```
 v1 (VOC) → v2 (VOC) → v3 (33%) → v4 (43.5%) → v5 (50.7%) → v6 (52.5%)
-→ v7 (56.8%) → v8 (53.9%) ← GIẢM! → v9 (55.6%) → v10 (54.4%) ← GIẢM!
-→ v11 (54.7%) → v12 (55.2%) → YOLO26 (57.2%)
+→ v7 (56.8%) → v8 (53.9%) ↓ → v9 (55.6%) → v10 (54.4%) ↓
+→ v11 (54.7%) → v12 (55.2%) → 𝐘𝐎𝐋𝐎𝟐𝟔 (𝟓𝟕.𝟐%)
 ```
-**Đỉnh cao accuracy:** v7 (56.8%) cho đến khi YOLO26 vượt qua (57.2%).
 
 ### 3.2. Efficiency (mAP / Params)
 | Version | mAP | Params | mAP/M params |
@@ -199,7 +198,7 @@ v1 (VOC) → v2 (VOC) → v3 (33%) → v4 (43.5%) → v5 (50.7%) → v6 (52.5%)
 | **v10-X** | **54.4%** | **29.5M** | **1.84** ← Hiệu quả nhất! |
 | v11-X | 54.7% | 56.9M | 0.96 |
 
-**v10 hiệu quả nhất** — cùng accuracy nhưng ít params nhất.
+
 
 ### 3.3. Dễ dùng (Ecosystem)
 ```
